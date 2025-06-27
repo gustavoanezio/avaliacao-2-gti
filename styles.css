@@ -1,0 +1,486 @@
+:root {
+    --primary-color: #d4a574;
+    --secondary-color: #2c1810;
+    --accent-color: #ff6b35;
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* Animações customizadas */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Classes de animação */
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slideInLeft {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slideInRight {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Header com gradiente e efeitos */
+.navbar {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.navbar.scrolled {
+    background: rgba(44, 24, 16, 0.95);
+    backdrop-filter: blur(15px);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Hero Section com parallax effect */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23d4a574" width="1200" height="800"/><circle fill="%23ff6b35" cx="300" cy="200" r="50" opacity="0.6"/><circle fill="%232c1810" cx="900" cy="600" r="80" opacity="0.4"/><rect fill="%23fff" x="400" y="300" width="400" height="200" rx="20" opacity="0.1"/></svg>');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, var(--accent-color) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, var(--primary-color) 0%, transparent 50%);
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.btn-custom {
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-custom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-custom:hover::before {
+    left: 100%;
+}
+
+.btn-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+    color: white;
+}
+
+/* Seções com efeitos visuais */
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+    border-radius: 2px;
+}
+
+/* Cards com efeitos 3D */
+.card-custom {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+.card-custom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+}
+
+.card-custom:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+/* Formulário estilizado */
+.form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.9);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(212, 165, 116, 0.25);
+    transform: translateY(-2px);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Tabela com efeitos visuais */
+.table-custom {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.table-custom thead {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    color: white;
+}
+
+.table-custom thead th {
+    border: none;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.table-custom tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table-custom tbody tr:hover {
+    background-color: rgba(212, 165, 116, 0.1);
+    transform: scale(1.02);
+}
+
+.table-custom tbody td {
+    padding: 18px 20px;
+    border: none;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+/* Menu/Cardápio com grid responsivo */
+.menu-item {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+}
+
+.menu-item h4 {
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item .price {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    float: right;
+}
+
+.menu-item p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: white;
+    padding: 60px 0 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle fill="rgba(255,255,255,0.05)" cx="20" cy="20" r="2"/><circle fill="rgba(255,255,255,0.05)" cx="80" cy="80" r="2"/><circle fill="rgba(255,255,255,0.05)" cx="40" cy="60" r="1"/></svg>');
+    opacity: 0.3;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsividade aprimorada */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        height: 80vh;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Elementos flutuantes decorativos */
+.floating-element {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 4s ease-in-out infinite;
+}
+
+.floating-element:nth-child(2) {
+    animation-delay: -1s;
+}
+
+.floating-element:nth-child(3) {
+    animation-delay: -2s;
+}
+
+/* Scroll reveal classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loading spinner customizado */
+.spinner-custom {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}

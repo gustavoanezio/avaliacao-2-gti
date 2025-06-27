@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horários de Funcionamento - Sabor & Arte</title>
+    
+    <!-- Bootstrap 4 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+        <div class="container">
+            <div class="row w-100 align-items-center">
+                <div class="col-auto">
+                    <a class="navbar-brand animate-pulse" href="./index.html">
+                        <i class="fas fa-utensils mr-2"></i>Sabor & Arte
+                    </a>
+                </div>
+                <div class="col">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="./index.html">Início</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./sobre.html">Sobre</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./menu.html">Cardápio</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="./tabela.html">Horários</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./formulario.html">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header com espaçamento para navbar fixa -->
+    <div style="height: 100px;"></div>
+
+    <!-- Horários de Funcionamento -->
+    <section id="hours" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title reveal">Horários de Funcionamento</h2>
+            
+            <!-- Informações adicionais -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 col-md-10 col-12">
+                    <div class="card-custom reveal text-center">
+                        <h4 class="mb-3">
+                            <i class="fas fa-clock text-primary mr-2"></i>
+                            Estamos sempre prontos para recebê-lo!
+                        </h4>
+                        <p class="lead">Confira nossos horários de funcionamento e reserve sua mesa. Para grupos acima de 8 pessoas, recomendamos reserva prévia.</p>
+                        <div class="row mt-4">
+                            <div class="col-md-4 mb-3">
+                                <div class="text-center">
+                                    <i class="fas fa-phone-alt text-accent-color mb-2" style="font-size: 2rem;"></i>
+                                    <h6>Reservas</h6>
+                                    <p class="mb-0">(14) 3456-7890</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="text-center">
+                                    <i class="fab fa-whatsapp text-success mb-2" style="font-size: 2rem;"></i>
+                                    <h6>WhatsApp</h6>
+                                    <p class="mb-0">(14) 98765-4321</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="text-center">
+                                    <i class="fas fa-envelope text-info mb-2" style="font-size: 2rem;"></i>
+                                    <h6>E-mail</h6>
+                                    <p class="mb-0">contato@saborearte.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!-- 
+QUESTÃO 3 - TABELA DE HORÁRIOS COM BOOTSTRAP 4
+
+Criamos uma tabela usando:
+- <table class="table table-hover mb-0"> para estilo moderno
+- <thead> para o cabeçalho com ícones
+- <tbody> para os dados
+- Adicionamos classes personalizadas no CSS para efeitos visuais como hover, bordas arredondadas e cores.
+-->
+
+            <!-- Tabela de Horários -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12 col-12">
+                    <div class="table-custom reveal">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <i class="fas fa-calendar-alt mr-2"></i>Dia da Semana
+                                    </th>
+                                    <th scope="col">
+                                        <i class="fas fa-clock mr-2"></i>Horário de Funcionamento
+                                    </th>
+                                    <th scope="col">
+                                        <i class="fas fa-info-circle mr-2"></i>Status
+                                    </th>
+                                    <th scope="col">
+                                        <i class="fas fa-utensils mr-2"></i>Observações
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>Segunda-feira</strong>
+                                        <br><small class="text-muted">Monday</small>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-outline-dark">18:00 - 23:00</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-success">
+                                            <i class="fas fa-check mr-1"></i>Aberto
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <small class="text-muted">Apenas jantar</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Terça-feira</strong>
+                                        <br><small class="text-muted">Tuesday</small>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-outline-dark">18:00 - 23:00</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-success">
+                                            <i class="fas fa-check mr-1"></i>Aberto
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <small class="text-muted">Apenas jantar</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Quarta-feira</strong>
+                                        <br><small class="text-muted">Wednesday</small>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-outline-dark">18:00 - 23:00</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-success">
+                                            <i class="fas fa-check mr-1"></i>Aberto
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <small class="text-muted">Apenas jantar</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Quinta-feira</strong>
+                                        <br><small class="text-muted">Thursday</small>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-outline-dark">18:00 - 23:30</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-success">
+                                            <i class="fas fa-check mr-1"></i>Aberto
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <small class="text-muted">Horário estendido</small>
+                                    </td>
+                                </tr>
+                                <tr class="table-warning">
+                                    <td>
+                                        <strong>Sexta-feira</strong>
+                                        <br><small class="text-muted">Friday</small>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-warning">18:00 - 00:00</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-success">
+                                            <i class="fas fa-fire mr-1"></i>Aberto
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <small class="text-warning">
+                                            <i class="fas fa-star mr-1"></i>Noite especial
+                                        </small>
+                                    </td>
+                                </tr>
+                                <tr class="table-info">
+                                    <td>
+                                        <strong>Sábado</strong>
+                                        <br><small class="text-muted">Saturday</small>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-info">12:00 - 00:00</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-success">
+                                            <i class="fas fa-check mr-1"></i>Aberto
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <small class="text-info">
+                                            <i class="fas fa-utensils mr-1"></i>Almoço e jantar
+                                        </small>
+                                    </td>
+                                </tr>
+                                <tr class="table-info">
+                                    <td>
+                                        <strong>Domingo</strong>
+                                        <br><small class="text-muted">Sunday</small>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-info">12:00 - 22:00</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-success">
+                                            <i class="fas fa-check mr-1"></i>Aberto
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <small class="text-info">
+                                            <i class="fas fa-family mr-1"></i>Almoço em família
+                                        </small>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informações Adicionais -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8 col-md-10 col-12">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card-custom reveal">
+                                <h5 class="mb-3">
+                                    <i class="fas fa-calendar-check text-primary mr-2"></i>
+                                    Reservas Recomendadas
+                                </h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success mr-2"></i>Sextas e sábados à noite</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Domingos para almoço</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Grupos acima de 6 pessoas</li>
+                                    <li><i class="fas fa-check text-success mr-2"></i>Datas especiais e feriados</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card-custom reveal">
+                                <h5 class="mb-3">
+                                    <i class="fas fa-info-circle text-warning mr-2"></i>
+                                    Informações Importantes
+                                </h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-clock text-warning mr-2"></i>Última comanda: 30min antes do fechamento</li>
+                                    <li><i class="fas fa-credit-card text-warning mr-2"></i>Aceitamos todos os cartões</li>
+                                    <li><i class="fas fa-parking text-warning mr-2"></i>Estacionamento próprio disponível</li>
+                                    <li><i class="fas fa-wifi text-warning mr-2"></i>Wi-Fi gratuito para clientes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-6 col-md-8 col-12 text-center">
+                    <div class="card-custom reveal">
+                        <h4 class="mb-3">Pronto para uma experiência única?</h4>
+                        <p class="mb-4">Reserve sua mesa agora e desfrute de momentos especiais no Sabor & Arte.</p>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <a href="./formulario.html" class="btn btn-custom btn-block">
+                                    <i class="fas fa-envelope mr-2"></i>Fazer Reserva
+                                </a>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <a href="tel:+5511987654321" class="btn btn-outline-success btn-block">
+                                    <i class="fas fa-phone mr-2"></i>Ligar Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <h5 class="mb-3">
+                            <i class="fas fa-utensils mr-2"></i>Sabor & Arte
+                        </h5>
+                        <p>Experiência gastronômica única onde tradição e inovação se encontram.</p>
+                        <div class="social-links">
+                            <a href="#" class="text-white mr-3"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white mr-3"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white mr-3"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <h5 class="mb-3">Contato</h5>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>R. Dr. Gazi Amin Chahur, 272. Jaú, SP</p>    
+                        <p><i class="fas fa-phone mr-2"></i>(14) 3456-7890</p>
+                        <p><i class="fas fa-envelope mr-2"></i>contato@saborearte.com</p>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-12 mb-4">
+                        <h5 class="mb-3">Links Rápidos</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html" class="text-white-50">Início</a></li>
+                            <li><a href="sobre.html" class="text-white-50">Sobre</a></li>
+                            <li><a href="menu.html" class="text-white-50">Cardápio</a></li>
+                            <li><a href="formulario.html" class="text-white-50">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <p class="mb-0">&copy; 2025 Sabor & Arte. Todos os direitos reservados. | Desenvolvido por Luis Gustavo e Felipy.</p>
+                    </div>
+                    <div class="col-md-4 text-md-right">
+                        <p class="mb-0">Desenvolvido com <i class="fas fa-heart text-danger"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Personalizado -->
+    <script src="./scripts.js"></script>
+</body>
+</html>

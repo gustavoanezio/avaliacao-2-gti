@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Sabor & Arte</title>
+    
+    <!-- Bootstrap 4 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Arquivo CSS personalizado -->
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 
+QUESTÃO 2 - FORMULÁRIO DE CONTATO COM GRID
+
+Estruturamos o formulário assim:
+- Usamos <div class="row"> para dividir em colunas.
+- Campos:
+    - Nome (obrigatório)
+    - E-mail (obrigatório)
+    - Telefone (opcional)
+    - Mensagem
+- O botão usa a classe 'btn btn-custom btn-lg' estilizada no CSS e baseada no Bootstrap 4.
+
+Exemplo de organização:
+<div class="row">
+    <div class="col-md-6"> Campo A </div>
+    <div class="col-md-6"> Campo B </div>
+</div>
+-->
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+        <div class="container">
+            <div class="row w-100 align-items-center">
+                <div class="col-auto">
+                    <a class="navbar-brand animate-pulse" href="./index.html">
+                        <i class="fas fa-utensils mr-2"></i>Sabor & Arte
+                    </a>
+                </div>
+                <div class="col">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="./index.html">Início</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./sobre.html">Sobre</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./menu.html">Cardápio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./tabela.html">Horários</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="./formulario.html">Contato</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Espaço para navbar fixa -->
+    <div style="height: 80px;"></div>
+
+    <!-- Formulário de Contato -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title reveal">Entre em Contato</h2>
+            
+            <!-- Grid responsivo para formulário e informações -->
+            <div class="row">
+                <!-- Formulário -->
+                <div class="col-lg-8 col-md-7 col-12 mb-4">
+                    <div class="card-custom reveal">
+                        <h3 class="mb-4">
+                            <i class="fas fa-envelope text-primary mr-2"></i>Envie sua Mensagem
+                        </h3>
+                        
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="nome">
+                                            <i class="fas fa-user mr-1"></i>Nome Completo *
+                                        </label>
+                                        <input type="text" class="form-control" id="nome" name="nome" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="telefone">
+                                            <i class="fas fa-phone mr-1"></i>Telefone
+                                        </label>
+                                        <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(14) 99999-9999">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="email">
+                                    <i class="fas fa-envelope mr-1"></i>E-mail *
+                                </label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="assunto">
+                                    <i class="fas fa-tag mr-1"></i>Assunto
+                                </label>
+                                <select class="form-control" id="assunto" name="assunto">
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="reserva">Reserva de Mesa</option>
+                                    <option value="cardapio">Dúvidas sobre Cardápio</option>
+                                    <option value="evento">Eventos Especiais</option>
+                                    <option value="elogio">Elogios</option>
+                                    <option value="sugestao">Sugestões</option>
+                                    <option value="reclamacao">Reclamações</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="pessoas">
+                                    <i class="fas fa-users mr-1"></i>Número de Pessoas (para reservas)
+                                </label>
+                                <select class="form-control" id="pessoas" name="pessoas">
+                                    <option value="">Selecione</option>
+                                    <option value="1">1 pessoa</option>
+                                    <option value="2">2 pessoas</option>
+                                    <option value="3">3 pessoas</option>
+                                    <option value="4">4 pessoas</option>
+                                    <option value="5">5 pessoas</option>
+                                    <option value="6">6 pessoas</option>
+                                    <option value="7">7 pessoas</option>
+                                    <option value="8">8 pessoas</option>
+                                    <option value="9+">9 ou mais pessoas</option>
+                                </select>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="data">
+                                            <i class="fas fa-calendar mr-1"></i>Data Preferida (para reservas)
+                                        </label>
+                                        <input type="date" class="form-control" id="data" name="data">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="horario">
+                                            <i class="fas fa-clock mr-1"></i>Horário Preferido (para reservas)
+                                        </label>
+                                        <input type="time" class="form-control" id="horario" name="horario">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="mensagem">
+                                    <i class="fas fa-comment mr-1"></i>Mensagem *
+                                </label>
+                                <textarea class="form-control" id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem aqui..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="newsletter" name="newsletter">
+                                    <label class="custom-control-label" for="newsletter">
+                                        Desejo receber novidades e promoções por e-mail
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-custom btn-lg">
+                                    <i class="fas fa-paper-plane mr-2"></i>
+                                    <span class="btn-text">Enviar Mensagem</span>
+                                    <span class="spinner-custom d-none"></span>
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <!-- Mensagem de sucesso -->
+                        <div id="successMessage" class="alert alert-success mt-3 d-none">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Mensagem enviada com sucesso! Entraremos em contato em breve.
+                        </div>
+                        
+                        <!-- Mensagem de erro -->
+                        <div id="errorMessage" class="alert alert-danger mt-3 d-none">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>
+                            Ocorreu um erro ao enviar a mensagem. Tente novamente.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Informações de Contato -->
+                <div class="col-lg-4 col-md-5 col-12 mb-4">
+                    <div class="card-custom reveal">
+                        <h3 class="mb-4">
+                            <i class="fas fa-info-circle text-info mr-2"></i>Informações
+                        </h3>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item mb-3">
+                                <h5><i class="fas fa-map-marker-alt text-danger mr-2"></i>Endereço</h5>
+                                <p class="mb-1">Rua das Delícias, 123</p>
+                                <p class="mb-1">Bairro Gourmet</p>
+                                <p>São Paulo - SP, 01234-567</p>
+                            </div>
+                            
+                            <div class="contact-item mb-3">
+                                <h5><i class="fas fa-phone text-success mr-2"></i>Telefones</h5>
+                                <p class="mb-1">Reservas: (14) 3456-7890</p>
+                                <p>WhatsApp: (14 99876-5432</p>
+                            </div>
+                            
+                            <div class="contact-item mb-3">
+                                <h5><i class="fas fa-envelope text-primary mr-2"></i>E-mail</h5>
+                                <p class="mb-1">contato@saborarte.com.br</p>
+                                <p>reservas@saborarte.com.br</p>
+                            </div>
+                            
+                            <div class="contact-item mb-3">
+                                <h5><i class="fas fa-clock text-warning mr-2"></i>Funcionamento</h5>
+                                <p class="mb-1">Segunda a Quinta: 18:00 - 23:00</p>
+                                <p class="mb-1">Sexta: 18:00 - 00:00</p>
+                                <p class="mb-1">Sábado: 12:00 - 00:00</p>
+                                <p>Domingo: 12:00 - 22:00</p>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <h5><i class="fab fa-instagram text-info mr-2"></i>Redes Sociais</h5>
+                                <div class="social-links">
+                                    <a href="#" class="btn btn-outline-primary btn-sm mr-2 mb-2">
+                                        <i class="fab fa-facebook-f"></i> Facebook
+                                    </a>
+                                    <a href="#" class="btn btn-outline-info btn-sm mr-2 mb-2">
+                                        <i class="fab fa-instagram"></i> Instagram
+                                    </a>
+                                    <a href="#" class="btn btn-outline-success btn-sm mb-2">
+                                        <i class="fab fa-whatsapp"></i> WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mapa (placeholder) -->
+                    <div class="card-custom reveal mt-4">
+                        <h4 class="mb-3">
+                            <i class="fas fa-map text-danger mr-2"></i>Localização
+                        </h4>
+                        <div class="map-placeholder">
+                            <div class="bg-light p-4 text-center" style="border-radius: 10px; min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                                <div>
+                                    <i class="fas fa-map-marked-alt fa-3x text-muted mb-3"></i>
+                                    <p class="text-muted">Mapa interativo em breve</p>
+                                    <small class="text-muted">Rua das Delícias, 123 - São Paulo/SP</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <h5><i class="fas fa-utensils mr-2"></i>Sabor & Arte</h5>
+                        <p>Uma experiência gastronômica única onde tradição e inovação se encontram.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <h5><i class="fas fa-map-marker-alt mr-2"></i>Endereço</h5>
+                        <p>R. Dr. Gazi Amin Chahur, 272<br>
+                        Vila Jardim Brasilia<br>
+                        Jaú - SP, 17212-280</p>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-12 mb-4">
+                        <h5><i class="fas fa-phone mr-2"></i>Contato</h5>
+                        <p>Telefone: (14) 3456-7890<br>
+                        WhatsApp: (14) 99876-5432</p>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Sabor & Arte. Todos os direitos reservados. | Desenvolvido por Luis Gustavo e Felipy.</p>
+                    </div>
+                    <div class="col-md-6 text-md-right">
+                        <a href="#" class="text-white mr-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white mr-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="./scripts.js"></script>
+</body>
+</html>
